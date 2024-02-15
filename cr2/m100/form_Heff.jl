@@ -27,7 +27,7 @@ function make_H(diabats::TPSCIstate, adiabats::TPSCIstate, ein)
     return Heff
 end
 
-@load("data_tpsci_00.jld2")
+@load("data_tpsci_04.jld2")
 
 conversion = 219474.63
 
@@ -61,13 +61,27 @@ Heff_exact .*= conversion
 max_val = max(maximum(abs.(Heff_bare)), maximum(abs.(Heff_exact)))
 
 #plotd = heatmap(Heff*conversion; color=palette([:teal, :white, :orange], 10), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm)
-plotd = heatmap(Heff_bare; color=palette(:RdGy_10, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  clims=(-max_val, max_val), ticks = false)
+plotd = heatmap(Heff_bare; color=palette(:RdGy_10, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
+                clims=(-max_val, max_val), ticks = false,xaxis=false,yaxis=false, 
+                xlims = (0.5,4.5), ylims = (0.5,4.5),
+                yflip=true)
+m, n = size(Heff_bare)
+vline!(0.5:(n+0.5), c=:white, label=false)
+hline!(0.5:(m+0.5), c=:white, label=false)
+
+
 savefig(plotd,"Heff_bare.png")
 
 
 
-plotd = heatmap(Heff_exact; color=palette(:RdGy_10, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  clims=(-max_val, max_val), ticks = false)
+plotd = heatmap(Heff_exact; color=palette(:RdGy_10, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
+                clims=(-max_val, max_val), ticks = false, xaxis=false,yaxis=false,
+                xlims = (0.5,4.5), ylims = (0.5,4.5),
+                yflip=true)
 #plotd = heatmap(Heff*27.2114079527*1000; color=palette(:Blues, 10), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm, xlims = (0,5), ylims = (0,5))
+m, n = size(Heff_bare)
+vline!(0.5:(n+0.5), c=:white, label=false)
+hline!(0.5:(m+0.5), c=:white, label=false)
 savefig(plotd,"Heff_exact.png")
 
 
