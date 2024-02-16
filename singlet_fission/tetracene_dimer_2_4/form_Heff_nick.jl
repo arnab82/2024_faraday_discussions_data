@@ -32,7 +32,7 @@ end
 conversion = 27.2114079527*1000
 
 @load "thresh_0004_nocluster_bases.jld2"
-@load "../tetracene_dimer_2_3/v_model_dimer.jld2"
+@load "../tetracene_dimer_1_4/v_model_dimer.jld2"
 @load "H_guess.jld2"
 
 display(FermiCG.get_vector(v_guess))
