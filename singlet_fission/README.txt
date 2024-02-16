@@ -18,6 +18,6 @@ Dimer
  2,4*    diab = [1,5,3,9,7,13,11,18,30,24]
  3,4*    diab = [1,4,5,8,9,12,13,19,25,31] 
 
- *means i actually ran those dimers 
+ *means I actually ran those dimers 
 
  Mapping info also in individual readmes
