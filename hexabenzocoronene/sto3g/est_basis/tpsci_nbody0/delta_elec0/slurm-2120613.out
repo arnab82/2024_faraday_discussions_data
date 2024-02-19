@@ -1,0 +1,158 @@
+tc174
+Resetting modules to system default. Reseting $MODULEPATH back to system default. All extra directories will be removed from $MODULEPATH.
+Usage: sbatch submit.sh {input file} {data file} {data file}
+tpsci_tucker_nbody0_deltaelec0.jl
+tpsci_tucker_nbody0_deltaelec0.jl.out
+/home/arnab22/SPF-data/hexabenzocoronene/sto3g/tpsci/est_basis/tpsci_nbody0/delta_elec0
+/localscratch/2120613
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 141 bytes  received 35 bytes  352.00 bytes/sec
+total size is 0  speedup is 0.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 27,525 bytes  received 35 bytes  55,120.00 bytes/sec
+total size is 27,380  speedup is 0.99
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 31,235 bytes  received 35 bytes  62,540.00 bytes/sec
+total size is 31,090  speedup is 0.99
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 34,949 bytes  received 35 bytes  69,968.00 bytes/sec
+total size is 34,800  speedup is 0.99
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 38,239 bytes  received 35 bytes  76,548.00 bytes/sec
+total size is 38,090  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 179,303 bytes  received 35 bytes  358,676.00 bytes/sec
+total size is 179,122  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 182,733 bytes  received 35 bytes  365,536.00 bytes/sec
+total size is 182,552  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 186,162 bytes  received 35 bytes  124,131.33 bytes/sec
+total size is 185,982  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 323,880 bytes  received 35 bytes  647,830.00 bytes/sec
+total size is 323,667  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 327,239 bytes  received 35 bytes  654,548.00 bytes/sec
+total size is 327,027  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 330,538 bytes  received 35 bytes  661,146.00 bytes/sec
+total size is 330,317  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 333,828 bytes  received 35 bytes  667,726.00 bytes/sec
+total size is 333,607  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 475,722 bytes  received 35 bytes  951,514.00 bytes/sec
+total size is 475,470  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 479,223 bytes  received 35 bytes  958,516.00 bytes/sec
+total size is 478,970  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 482,723 bytes  received 35 bytes  965,516.00 bytes/sec
+total size is 482,470  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 486,223 bytes  received 35 bytes  972,516.00 bytes/sec
+total size is 485,970  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 627,963 bytes  received 35 bytes  1,255,996.00 bytes/sec
+total size is 627,670  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 631,252 bytes  received 35 bytes  1,262,574.00 bytes/sec
+total size is 630,960  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 634,473 bytes  received 35 bytes  1,269,016.00 bytes/sec
+total size is 634,180  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 637,763 bytes  received 35 bytes  1,275,596.00 bytes/sec
+total size is 637,470  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 779,589 bytes  received 35 bytes  1,559,248.00 bytes/sec
+total size is 779,264  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 782,879 bytes  received 35 bytes  1,565,828.00 bytes/sec
+total size is 782,554  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 786,099 bytes  received 35 bytes  1,572,268.00 bytes/sec
+total size is 785,774  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 789,327 bytes  received 35 bytes  526,241.33 bytes/sec
+total size is 788,994  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 931,194 bytes  received 35 bytes  1,862,458.00 bytes/sec
+total size is 930,830  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 934,765 bytes  received 35 bytes  1,869,600.00 bytes/sec
+total size is 934,400  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 938,335 bytes  received 35 bytes  1,876,740.00 bytes/sec
+total size is 937,970  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 941,905 bytes  received 35 bytes  1,883,880.00 bytes/sec
+total size is 941,540  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 1,056,422 bytes  received 35 bytes  2,112,914.00 bytes/sec
+total size is 1,056,025  speedup is 1.00
+sending incremental file list
+tpsci_tucker_nbody0_deltaelec0.jl.out
+
+sent 1,065,904 bytes  received 35 bytes  2,131,878.00 bytes/sec
+total size is 1,065,508  speedup is 1.00
+rm: cannot remove ‘tmpfs’: Device or resource busy

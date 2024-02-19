@@ -1,0 +1,78 @@
+tc187
+Resetting modules to system default. Reseting $MODULEPATH back to system default. All extra directories will be removed from $MODULEPATH.
+Usage: sbatch submit.sh {input file} {data file} {data file}
+nbody1_deltaelec3.jl
+nbody1_deltaelec3.jl.out
+/home/arnab22/SPF-data/hexabenzocoronene/sto3g/tpsci/est_basis/tpsci_nbody1/tpsci_tucker_nbody1.jl.scr/clip
+/localscratch/2120620
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 128 bytes  received 35 bytes  326.00 bytes/sec
+total size is 0  speedup is 0.00
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 276 bytes  received 35 bytes  622.00 bytes/sec
+total size is 144  speedup is 0.46
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 395 bytes  received 35 bytes  860.00 bytes/sec
+total size is 264  speedup is 0.61
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 476 bytes  received 35 bytes  1,022.00 bytes/sec
+total size is 344  speedup is 0.67
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 1,807 bytes  received 35 bytes  3,684.00 bytes/sec
+total size is 1,675  speedup is 0.91
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 1,841 bytes  received 35 bytes  3,752.00 bytes/sec
+total size is 1,710  speedup is 0.91
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 1,919 bytes  received 35 bytes  3,908.00 bytes/sec
+total size is 1,787  speedup is 0.91
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 3,534 bytes  received 35 bytes  7,138.00 bytes/sec
+total size is 3,402  speedup is 0.95
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 3,570 bytes  received 35 bytes  2,403.33 bytes/sec
+total size is 3,439  speedup is 0.95
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 5,199 bytes  received 35 bytes  10,468.00 bytes/sec
+total size is 5,067  speedup is 0.97
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 5,237 bytes  received 35 bytes  10,544.00 bytes/sec
+total size is 5,105  speedup is 0.97
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 5,280 bytes  received 35 bytes  10,630.00 bytes/sec
+total size is 5,148  speedup is 0.97
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 6,908 bytes  received 35 bytes  13,886.00 bytes/sec
+total size is 6,776  speedup is 0.98
+sending incremental file list
+nbody1_deltaelec3.jl.out
+
+sent 6,950 bytes  received 35 bytes  13,970.00 bytes/sec
+total size is 6,819  speedup is 0.98
+rm: cannot remove ‘tmpfs’: Device or resource busy
