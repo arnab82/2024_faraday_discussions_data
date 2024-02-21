@@ -96,13 +96,13 @@ for key in energy_var:
     ymax = max(ymax, m*xmin+b)
 
     ax.plot(x, y, marker='o',linestyle='-' ,markersize=8, color = cb[key])
-    ax.plot(x, z, marker='x',linestyle=' ' , markersize=8, color = cb[key])
+    #ax.plot(x, z, marker='x',linestyle=' ' , markersize=8, color = cb[key])
 
     x2 = np.array([-1,0])*conversion
     line = m*x2+b
     ax.plot(x2, line, alpha=1.0, color = cb[key], linestyle='-', linewidth=1.5)
     line = m2*x2+b                                     
-    ax.plot(x2, line, alpha=0.5, color = cb[key], linestyle='--', linewidth=1.5)
+    #ax.plot(x2, line, alpha=0.5, color = cb[key], linestyle='--', linewidth=1.5)
     print("Extrapolated Result: %14.8f"% ((b+emin)/conversion))
     print("R^2                : %14.8f"% r_value)
     print("Var root",key,y)
