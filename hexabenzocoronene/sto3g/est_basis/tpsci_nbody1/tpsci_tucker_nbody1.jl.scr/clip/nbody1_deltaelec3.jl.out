@@ -1,0 +1,137 @@
+ Remove duplicates
+ Number of terms reduced from  9667 to  4039
+IDX001:DIM4096:001|002|003|004|005|006|
+IDX002:DIM4096:007|008|009|010|011|012|
+IDX003:DIM4096:013|014|015|016|017|018|
+IDX004:DIM4096:019|020|021|022|023|024|
+IDX005:DIM4096:025|026|027|028|029|030|
+IDX006:DIM4096:031|032|033|034|035|036|
+IDX007:DIM4096:037|038|039|040|041|042|
+
+ |== Tensor Product State CI =======================================
+ Hamiltonian matrix dimension =    23: 
+ Build full Hamiltonian matrix with dimension:       0.630509 seconds (1.40 M allocations: 72.141 MiB, 99.76% compilation time)
+ Now diagonalize
+ Diagonalization time:                               0.000311 seconds
+ Compute S2 expectation values:                      0.443926 seconds (565.41 k allocations: 29.315 MiB, 99.77% compilation time)
+  Root       Energy           S2
+     1 -122.56186267   0.00000003
+ ==================================================================|
+
+ |..................................do batched PT2......................................
+ thresh_foi    :1.0e-8
+ prescreen     :true
+ H0            :Hcmf
+ nbody         :4
+ Norms of input states:
+   1.00000000
+ Compute <0|H0|0>:                                   0.007365 seconds (20.04 k allocations: 790.422 KiB)
+ Compute <0|H|0>:                                    0.016005 seconds (230.45 k allocations: 8.554 MiB, 34.72% compilation time)
+ Number of jobs:    2773
+ Number of threads: 64
+   |----------------------------------------------------------------------------------------------------|
+   |0%                                                                                              100%|
+   |---------------------------------------------------------------------------------------------------|
+ Time spent computing E2        169.4 (s)
+  Root         E(0)         E(2)
+     1 -122.56186267 -122.63022758
+ ......................................................................................|
+171.561033 seconds (410.48 M allocations: 19.096 GiB, 1.99% gc time, 5.63% compilation time)
+  0.011083 seconds (73.30 k allocations: 2.736 MiB)
+     1 -1582.34185935 -1459.84836158   0.00000003
+
+ |== Tensor Product State CI =======================================
+ Hamiltonian matrix dimension =    15: 
+ Build full Hamiltonian matrix with dimension:       0.001668 seconds (59.69 k allocations: 2.145 MiB)
+ Now diagonalize
+ Diagonalization time:                               0.000122 seconds
+ Compute S2 expectation values:                      0.005485 seconds (33.32 k allocations: 1.254 MiB)
+  Root       Energy           S2
+     1 -122.56186120   0.00000001
+ ==================================================================|
+
+ |..................................do batched PT2......................................
+ thresh_foi    :1.0e-8
+ prescreen     :true
+ H0            :Hcmf
+ nbody         :4
+ Norms of input states:
+   1.00000000
+ Compute <0|H0|0>:                                   0.007655 seconds (10.58 k allocations: 425.906 KiB)
+ Compute <0|H|0>:                                    0.008050 seconds (103.83 k allocations: 3.844 MiB)
+ Number of jobs:    2773
+ Number of threads: 64
+   |----------------------------------------------------------------------------------------------------|
+   |0%                                                                                              100%|
+   |---------------------------------------------------------------------------------------------------|
+ Time spent computing E2        151.6 (s)
+  Root         E(0)         E(2)
+     1 -122.56186120 -122.63021535
+ ......................................................................................|
+151.723788 seconds (381.08 M allocations: 17.815 GiB, 1.48% gc time)
+  0.003983 seconds (32.64 k allocations: 1.234 MiB)
+     1 -1582.34185788 -1459.84835083   0.00000001
+
+ |== Tensor Product State CI =======================================
+ Hamiltonian matrix dimension =    13: 
+ Build full Hamiltonian matrix with dimension:       0.001417 seconds (45.89 k allocations: 1.649 MiB)
+ Now diagonalize
+ Diagonalization time:                               0.000089 seconds
+ Compute S2 expectation values:                      0.004909 seconds (25.47 k allocations: 990.234 KiB)
+  Root       Energy           S2
+     1 -122.56186023   0.00000001
+ ==================================================================|
+
+ |..................................do batched PT2......................................
+ thresh_foi    :1.0e-8
+ prescreen     :true
+ H0            :Hcmf
+ nbody         :4
+ Norms of input states:
+   1.00000000
+ Compute <0|H0|0>:                                   0.002053 seconds (7.12 k allocations: 305.812 KiB)
+ Compute <0|H|0>:                                    0.002936 seconds (77.65 k allocations: 2.887 MiB)
+ Number of jobs:    2773
+ Number of threads: 64
+   |----------------------------------------------------------------------------------------------------|
+   |0%                                                                                              100%|
+   |---------------------------------------------------------------------------------------------------|
+ Time spent computing E2        155.4 (s)
+  Root         E(0)         E(2)
+     1 -122.56186023 -122.63021540
+ ......................................................................................|
+155.411392 seconds (377.59 M allocations: 17.548 GiB, 7.69% gc time)
+  0.002557 seconds (24.59 k allocations: 963.219 KiB)
+     1 -1582.34185691 -1459.84835184   0.00000001
+
+ |== Tensor Product State CI =======================================
+ Hamiltonian matrix dimension =    13: 
+ Build full Hamiltonian matrix with dimension:       0.001095 seconds (45.89 k allocations: 1.649 MiB)
+ Now diagonalize
+ Diagonalization time:                               0.000104 seconds
+ Compute S2 expectation values:                      0.002972 seconds (24.77 k allocations: 968.453 KiB)
+  Root       Energy           S2
+     1 -122.56186023   0.00000001
+ ==================================================================|
+
+ |..................................do batched PT2......................................
+ thresh_foi    :1.0e-8
+ prescreen     :true
+ H0            :Hcmf
+ nbody         :4
+ Norms of input states:
+   1.00000000
+ Compute <0|H0|0>:                                   0.001704 seconds (6.97 k allocations: 301.062 KiB)
+ Compute <0|H|0>:                                    0.002554 seconds (77.44 k allocations: 2.880 MiB)
+ Number of jobs:    2773
+ Number of threads: 64
+   |----------------------------------------------------------------------------------------------------|
+   |0%                                                                                              100%|
+   |---------------------------------------------------------------------------------------------------|
+ Time spent computing E2        156.1 (s)
+  Root         E(0)         E(2)
+     1 -122.56186023 -122.63021540
+ ......................................................................................|
+156.151110 seconds (377.59 M allocations: 17.548 GiB, 7.67% gc time)
+  0.002131 seconds (24.51 k allocations: 959.109 KiB)
+     1 -1582.34185691 -1459.84835184   0.00000001
