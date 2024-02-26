@@ -1,0 +1,72 @@
+ Remove duplicates
+ Number of terms reduced from  9667 to  4039
+IDX001:DIM4096:001|002|003|004|005|006|
+IDX002:DIM4096:007|008|009|010|011|012|
+IDX003:DIM4096:013|014|015|016|017|018|
+IDX004:DIM4096:019|020|021|022|023|024|
+IDX005:DIM4096:025|026|027|028|029|030|
+IDX006:DIM4096:031|032|033|034|035|036|
+IDX007:DIM4096:037|038|039|040|041|042|
+ Remove duplicates
+ Number of terms reduced from  9667 to  4039
+IDX001:DIM4096:001|002|003|004|005|006|
+IDX002:DIM4096:007|008|009|010|011|012|
+IDX003:DIM4096:013|014|015|016|017|018|
+IDX004:DIM4096:019|020|021|022|023|024|
+IDX005:DIM4096:025|026|027|028|029|030|
+IDX006:DIM4096:031|032|033|034|035|036|
+IDX007:DIM4096:037|038|039|040|041|042|
+
+ |== Tensor Product State CI =======================================
+ Hamiltonian matrix dimension =  2827: 
+ Build full Hamiltonian matrix with dimension:      40.594245 seconds (1.47 G allocations: 54.855 GiB, 12.84% gc time, 1.33% compilation time)
+ Now diagonalize
+ Iter:   1 SS: 1    E: -122.57584809*  R: 3.7e-06*  LinDep: 2.2e-16* 
+ Diagonalization time:                               0.602176 seconds
+ Compute S2 expectation values:                     22.644157 seconds (902.69 M allocations: 33.583 GiB, 14.09% gc time, 1.91% compilation time)
+  Root       Energy           S2
+     1 -122.57584809   0.02301043
+ ==================================================================|
+
+ |..................................do batched PT2......................................
+ thresh_foi    :1.0e-8
+ prescreen     :true
+ H0            :Hcmf
+ nbody         :4
+ Norms of input states:
+   1.00000000
+ Compute <0|H0|0>:                                   5.741429 seconds (224.33 M allocations: 8.353 GiB, 14.26% gc time)
+ Compute <0|H|0>:                                   79.721360 seconds (2.94 G allocations: 109.168 GiB, 12.98% gc time)
+ Number of jobs:    1
+ Number of threads: 1
+ERROR: LoadError: TaskFailedException
+Stacktrace:
+ [1] wait
+   @ ./task.jl:334 [inlined]
+ [2] threading_run(func::Function)
+   @ Base.Threads ./threadingconstructs.jl:38
+ [3] macro expansion
+   @ ./threadingconstructs.jl:97 [inlined]
+ [4] macro expansion
+   @ ~/SPF-data/FermiCG/src/tpsci_pt2_energy.jl:140 [inlined]
+ [5] macro expansion
+   @ ./timing.jl:299 [inlined]
+ [6] compute_pt2_energy(ci_vector_in::TPSCIstate{Float64, 7, 1}, cluster_ops::Vector{FermiCG.ClusterOps{Float64}}, clustered_ham::ClusteredOperator{7}; nbody::Int64, H0::String, E0::Nothing, thresh_foi::Float64, prescreen::Bool, verbose::Int64)
+   @ FermiCG ~/SPF-data/FermiCG/src/tpsci_pt2_energy.jl:136
+ [7] top-level scope
+   @ ./timing.jl:220
+
+    nested task error: DivideError: integer division error
+    Stacktrace:
+     [1] rem(x::Int64, y::Int64)
+       @ Base ./int.jl:285
+     [2] macro expansion
+       @ ~/SPF-data/FermiCG/src/tpsci_pt2_energy.jl:148 [inlined]
+     [3] (::FermiCG.var"#897#threadsfor_fun#451"{Int64, String, Float64, Bool, Int64, Vector{FermiCG.ClusterOps{Float64}}, Vector{Vector{Float64}}, Vector{Vector{StaticArraysCore.MVector{7, Int16}}}, Vector{Vector{Vector{Int16}}}, Vector{Vector{Vector{Float64}}}, TPSCIstate{Float64, 7, 1}, Vector{Tuple{Int64, Any}}})(onethread::Bool)
+       @ FermiCG ./threadingconstructs.jl:85
+     [4] (::FermiCG.var"#897#threadsfor_fun#451"{Int64, String, Float64, Bool, Int64, Vector{FermiCG.ClusterOps{Float64}}, Vector{Vector{Float64}}, Vector{Vector{StaticArraysCore.MVector{7, Int16}}}, Vector{Vector{Vector{Int16}}}, Vector{Vector{Vector{Float64}}}, TPSCIstate{Float64, 7, 1}, Vector{Tuple{Int64, Any}}})()
+       @ FermiCG ./threadingconstructs.jl:52
+in expression starting at /localscratch/2155936/tpsci_clip.jl:20
+   |----------------------------------------------------------------------------------------------------|
+   |0%                                                                                              100%|
+   |
