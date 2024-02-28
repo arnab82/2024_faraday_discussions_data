@@ -67,11 +67,3 @@ function run()
 end
 
 run()
-max_val1 = max(0, maximum(abs.(Corr_diff_N_Sz)))
-plotd = heatmap(Corr_diff_N_Sz; color=palette(:RdGy_9, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
-                               clims=(-max_val1, max_val1), ticks = false,xaxis=false,yaxis=false, 
-                               xlims = (0.5,7.5), ylims = (0.5,7.5),yflip=true)
-m, n = size(Corr_diff_N_Sz)
-vline!(0.5:(n+0.5), c=:grey, label=false)
-hline!(0.5:(m+0.5), c=:grey, label=false)
-savefig(plotd,@sprintf("correlation_diff_N_Sz_hbc.png"))
