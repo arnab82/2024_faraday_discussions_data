@@ -40,7 +40,7 @@ e0b, v0b = FermiCG.tpsci_ci(v, cluster_ops, clustered_ham,
                                 max_mem_ci = 200.0);
 
 @time e2 = FermiCG.compute_pt2_energy(v0b, cluster_ops, clustered_ham, thresh_foi=1e-8);
-name = "/home/arnab22/SPF-data/hexabenzocoronene/sto3g/tpsci/est_basis/tpsci_nbody2/deltaelec1/jld2/tucker_thresh_4e4.jld2"
+name = "tucker_thresh_4e4.jld2"
 clustered_S2 = FermiCG.extract_S2(ci_vector.clusters)
 @time s2 = FermiCG.compute_expectation_value_parallel(v0b, cluster_ops, clustered_S2)
 @save string(name) cluster_bases e0b v0b e2 s2
@@ -60,7 +60,7 @@ e0b, v0b = FermiCG.tpsci_ci(v0b, cluster_ops, clustered_ham,
                                 max_mem_ci = 200.0);
 
 @time e2 = FermiCG.compute_pt2_energy(v0b, cluster_ops, clustered_ham, thresh_foi=1e-8);
-name = "/home/arnab22/SPF-data/hexabenzocoronene/sto3g/tpsci/est_basis/tpsci_nbody2/deltaelec1/jld2/tucker_thresh_5_2e4.jld2"
+name = "tucker_thresh_5_2e4.jld2"
 clustered_S2 = FermiCG.extract_S2(ci_vector.clusters)
 @time s2 = FermiCG.compute_expectation_value_parallel(v0b, cluster_ops, clustered_S2)
 @save string(name) cluster_bases e0b v0b e2 s2
@@ -82,7 +82,7 @@ e0b, v0b = FermiCG.tpsci_ci(v0b, cluster_ops, clustered_ham,
                                 max_mem_ci = 200.0);
 
 @time e2 = FermiCG.compute_pt2_energy(v0b, cluster_ops, clustered_ham, thresh_foi=1e-8);
-name = "/home/arnab22/SPF-data/hexabenzocoronene/sto3g/tpsci/est_basis/tpsci_nbody2/deltaelec1/jld2/tucker_thresh_2e4.jld2"
+name = "tucker_thresh_2e4.jld2"
 clustered_S2 = FermiCG.extract_S2(ci_vector.clusters)
 @time s2 = FermiCG.compute_expectation_value_parallel(v0b, cluster_ops, clustered_S2)
 @save string(name) cluster_bases e0b v0b e2 s2

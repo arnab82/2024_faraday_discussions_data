@@ -7,11 +7,13 @@ using Printf
 
 function run()
     @load("tucker_thresh_5_2e4.jld2")
+    @load("hexabenzocoronene_sto3g.jld2")
     cmf_state = TPSCIstate(clusters, FockConfig(init_fspace))
 
 
     display(v0b)
     cf = correlation_functions(v0b, cmf_state)
+    @save "correlation.jld2" cf
     n1 = cf["N"][1]
     n2 = cf["N"][2]
     sz1 = cf["Sz"][1]
@@ -61,7 +63,7 @@ function run()
 
     savefig(plotd,@sprintf("q_correlation_hbc.png"))
 
+
 end
 
 run()
-

@@ -6,12 +6,12 @@ using Printf
 using NPZ
 
 function run()
-    @load("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/tucker_thresh_4e4.jld2")
+    @load("tucker_thresh_4e4.jld2")
 
 
     display(v0b)
-    n2=npzread("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/N2_correlation.npy")
-    sz2=npzread("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/sz2_correlation.npy")
+    n2=npzread("N2_correlation.npy")
+    sz2=npzread("sz2_correlation.npy")
     display(n2)
     max_val = max(0, maximum(abs.(n2[1])))
 
@@ -27,7 +27,7 @@ function run()
     hline!(0.5:(m+0.5), c=:grey, label=false)
 
 
-    savefig(plotd,@sprintf("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/n_correlation_hbc.png"))
+    savefig(plotd,@sprintf("n_correlation_hbc.png"))
     max_val1 = max(0, maximum(abs.(sz2[1])))
     plotd = heatmap(sz2; color=palette(:RdGy_9, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
                         clims=(-max_val1, max_val1), ticks = false,xaxis=false,yaxis=false, 
@@ -37,7 +37,7 @@ function run()
     hline!(0.5:(m+0.5), c=:grey, label=false)
 
 
-    savefig(plotd,@sprintf("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/sz_correlation_hbc.png"))
+    savefig(plotd,@sprintf("sz_correlation_hbc.png"))
 
 end
 
