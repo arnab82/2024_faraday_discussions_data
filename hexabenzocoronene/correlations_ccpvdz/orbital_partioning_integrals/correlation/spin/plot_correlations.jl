@@ -6,7 +6,7 @@ using Printf
 
 
 function run()
-    @load("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/orbital_partioning_integrals/correlation/spin/tucker_thresh_1e3.jld2")
+    @load("tucker_thresh_1e3.jld2")
 
 
     display(v0b)
@@ -26,7 +26,7 @@ function run()
     hline!(0.5:(m+0.5), c=:grey, label=false)
 
 
-    savefig(plotd,@sprintf("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/orbital_partioning_integrals/correlation/spin/n_correlation_hbc.png"))
+    savefig(plotd,@sprintf("n_correlation_hbc.png"))
     max_val1 = max(0, maximum(abs.(sz2[1])))
     plotd = heatmap(sz2[1]; color=palette(:RdGy_9, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
                         clims=(-max_val1, max_val1), ticks = false,xaxis=false,yaxis=false, 
@@ -36,7 +36,7 @@ function run()
     hline!(0.5:(m+0.5), c=:grey, label=false)
 
 
-    savefig(plotd,@sprintf("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/orbital_partioning_integrals/correlation/spin/sz_correlation_hbc.png"))
+    savefig(plotd,@sprintf("sz_correlation_hbc.png"))
 
 end
 

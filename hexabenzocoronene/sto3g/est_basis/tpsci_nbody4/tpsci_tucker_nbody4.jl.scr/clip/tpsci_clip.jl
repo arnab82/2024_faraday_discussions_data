@@ -21,7 +21,7 @@ e0, v3 = FermiCG.tps_ci_direct(v2, cluster_ops, clustered_ham)
 clustered_S2 = FermiCG.extract_S2(v3.clusters)
 @time s2 = FermiCG.compute_expectation_value_parallel(v3, cluster_ops, clustered_S2)
 @printf(" %5s %12.8f %12.8f %12.8f\n",1, e0[1]+ecore,e2[1]+ecore, abs(s2[1]))
-@save "/home/arnab22/SPF-data/hexabenzocoronene/sto3g/tpsci/est_basis/tpsci_nbody4/tpsci_tucker_nbody4.jl.scr/clip/tucker_clip_0.0008.jld2" clusters cluster_bases e0 v3 e2 ecore s2
+@save "tucker_clip_0.0008.jld2" clusters cluster_bases e0 v3 e2 ecore s2
 
 FermiCG.clip!(v2, thresh=0.001)
 e0, v4 = FermiCG.tps_ci_direct(v3, cluster_ops, clustered_ham)
@@ -29,4 +29,4 @@ e0, v4 = FermiCG.tps_ci_direct(v3, cluster_ops, clustered_ham)
 clustered_S2 = FermiCG.extract_S2(v4.clusters)
 @time s2 = FermiCG.compute_expectation_value_parallel(v4, cluster_ops, clustered_S2)
 @printf(" %5s %12.8f %12.8f %12.8f\n",1, e0[1]+ecore,e2[1]+ecore, abs(s2[1]))
-@save "/home/arnab22/SPF-data/hexabenzocoronene/sto3g/tpsci/est_basis/tpsci_nbody4/tpsci_tucker_nbody4.jl.scr/clip/tucker_clip_0.001.jld2" clusters cluster_bases e0 v4 e2 ecore s2
+@save "tucker_clip_0.001.jld2" clusters cluster_bases e0 v4 e2 ecore s2

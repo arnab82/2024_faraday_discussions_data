@@ -42,7 +42,7 @@ e0b, v0b = FermiCG.tpsci_ci(v, cluster_ops, clustered_ham,
 @time e2 = FermiCG.compute_pt2_energy(v0b, cluster_ops, clustered_ham, thresh_foi=1e-8);
 clustered_S2 = FermiCG.extract_S2(ci_vector.clusters)
 @time s2 = FermiCG.compute_expectation_value_parallel(v0b, cluster_ops, clustered_S2)
-@save "/home/arnab22/SPF-data/hexabenzocoronene/sto3g/tpsci/est_basis/tpsci_nbody4/jld2/tucker_thresh_4e4.jld2"  cluster_bases e0b v0b e2 s2
+@save "tucker_thresh_4e4.jld2"  cluster_bases e0b v0b e2 s2
 
 rotations = FermiCG.hosvd(v0b, cluster_ops)
 for ci in clusters
@@ -61,7 +61,7 @@ e0b, v0b = FermiCG.tpsci_ci(v0b, cluster_ops, clustered_ham,
 @time e2 = FermiCG.compute_pt2_energy(v0b, cluster_ops, clustered_ham, thresh_foi=1e-8);
 clustered_S2 = FermiCG.extract_S2(ci_vector.clusters)
 @time s2 = FermiCG.compute_expectation_value_parallel(v0b, cluster_ops, clustered_S2)
-@save "/home/arnab22/SPF-data/hexabenzocoronene/sto3g/tpsci/est_basis/tpsci_nbody4/jld2/tucker_thresh_5_2e4.jld2"  cluster_bases e0b v0b e2 s2
+@save "tucker_thresh_5_2e4.jld2"  cluster_bases e0b v0b e2 s2
 
 
 
