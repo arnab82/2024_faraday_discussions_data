@@ -10,8 +10,9 @@ M = 150
 delta elec = 5 for each chromophore
 cluster basis = cluster eigenbasis spin
 nroots = 31
-thresh fois = 1e-5
+thresh fois = 4e-5
 thresh cipsi = 0.0004
+thresh spin = 0.0008
 pt2 thresh foi = 1e-8
 
 # Bare Hamiltonian
@@ -20,7 +21,7 @@ e2guess thresh foi = 1e-8
 Hbare = VEV'
 
 # JLD2 Files
-Hguess0004.jld2: e_guess, v_guess, e2_guess, ecore, Hbare
-thresh0004.jld2: clusters, cluster_bases, e0, v0, e2, s2, ecore
+H_guess_spin.jld2: e_guess, v_guess, e2_guess, ecore, Hbare
+thresh_spin_0.0004.jld2: clusters, e0, v0, e2, s2, ecore, init_fspace
 
 
