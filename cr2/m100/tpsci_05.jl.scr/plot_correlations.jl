@@ -17,11 +17,19 @@ function run()
     max_val = 0    
     for r in 1:nroots
         max_val = max(max_val, maximum(abs.(n2[r])))
+        #max_val = 1
     end
 
     for r in 1:nroots
         ordering = [1,3,4,5,2]
         n2r = n2[r][ordering,:][:,ordering]
+        
+#        tmp = diag(n2r)
+#        for i in 1:size(n2r,1)
+#            for j in 1:size(n2r,1)
+#                n2r[i,j] /= sqrt(tmp[i]*tmp[j])
+#            end
+#        end
         display(n2r)
         plotd = heatmap(n2r; color=palette(:RdGy_9, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
                         clims=(-max_val, max_val), ticks = false,xaxis=false,yaxis=false, 
