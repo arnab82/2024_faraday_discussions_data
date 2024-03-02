@@ -35,7 +35,7 @@ function run()
         #hline!(0.5:(m+0.5), c=:white, label=false)
     vline!(0.5:(n+0.5), c=:grey, label=false)
     hline!(0.5:(m+0.5), c=:grey, label=false)
-
+    display(plotd)
 
     savefig(plotd,@sprintf("n_correlation_hbc.png"))
     
