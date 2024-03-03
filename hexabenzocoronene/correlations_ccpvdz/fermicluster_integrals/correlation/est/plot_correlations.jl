@@ -3,17 +3,32 @@ using FermiCG
 using Plots
 using LinearAlgebra
 using Printf
-using NPZ
+#the clusters are in order of 1,2,4,7,5,3,6 , the matices are reordered to 1,2,3,4,5,6,7 to plot n2, sz2, q2
 
 function run()
     @load("tucker_thresh_4e4.jld2")
+    @load("../../hexabenzocoronene_old.jld2")
+    cmf_state = TPSCIstate(clusters, FockConfig(init_fspace))
 
 
     display(v0b)
-    n2=npzread("N2_correlation.npy")
-    sz2=npzread("sz2_correlation.npy")
-    display(n2)
-    display(sz2)
+    cf = correlation_functions(v0b, cmf_state)
+    @save "correlation.jld2" cf
+    n1 = cf["N"][1]
+    n2 = cf["N"][2]
+    sz1 = cf["Sz"][1]
+    sz2 = cf["Sz"][2]
+    q1 = cf["Q"][1]
+    q2 = cf["Q"][2]
+    
+    # display(n2[1])
+    n2=[0.0211009	-0.00633257	-0.00011367	-0.00024528	-0.00011387	-0.00630354	-0.00799197;
+    -0.00633257	0.02109258	-0.0063041	-0.00011387	-0.00024444	-0.00011378	-0.00798382;
+    -0.00011367	-0.0063041	0.02116623	-0.00630352	-0.00011378	-0.00025288	-0.00807827;
+    -0.00024528	-0.00011387	-0.00630352	0.02110091	-0.00633257	-0.00011367	-0.00799201;
+    -0.00011387	-0.00024444	-0.00011378	-0.00633257	0.02109261	-0.00630409	-0.00798387;
+    -0.00630354	-0.00011378	-0.00025288	-0.00011367	-0.00630409	0.02116673	-0.00807876;
+    -0.00799197	-0.00798382	-0.00807827	-0.00799201	-0.00798387	-0.00807876	0.04810869]
     max_val = max(0, maximum(abs.(n2)))
 
     plotd = heatmap(n2; color=palette(:RdGy_9, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
@@ -26,9 +41,17 @@ function run()
         #hline!(0.5:(m+0.5), c=:white, label=false)
     vline!(0.5:(n+0.5), c=:grey, label=false)
     hline!(0.5:(m+0.5), c=:grey, label=false)
+    display(plotd)
 
-
-    savefig(plotd,@sprintf("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/n_correlation_hbc.png"))
+    savefig(plotd,@sprintf("n_correlation_hbc.png"))
+    
+    sz2=[0.00748455	-0.002262	-0.00003294	-0.00008337	-0.00003316	-0.00003254	-0.00282559;
+    -0.002262	0.00748151	-0.00224727	-0.00003316	-0.00008312	-0.00003254	-0.00282343;
+    -0.00003294	-0.00224727	0.00750428	-0.00224749	-0.00003254	-0.00008819	-0.00285585;
+    -0.00008337	-0.00008337	-0.00224749	0.00748456	-0.00226199	-0.00003294	-0.0028256;
+    -0.00003316	-0.00003316	-0.00003254	-0.00226199	0.00748151	-0.00224726	-0.00282344;
+    -0.00224749	-0.00003254	-0.00008819	-0.00003294	-0.00224726	0.00750441	-0.00285598;
+    -0.00282559	-0.00282559	-0.00285585	-0.0028256	-0.00282344	-0.00285598	0.01700989]
     max_val1 = max(0, maximum(abs.(sz2)))
     plotd = heatmap(sz2; color=palette(:RdGy_9, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
                         clims=(-max_val1, max_val1), ticks = false,xaxis=false,yaxis=false, 
@@ -39,8 +62,43 @@ function run()
 
 
     savefig(plotd,@sprintf("sz_correlation_hbc.png"))
+    
+    q2=[0.03151639	0.00882228	-0.00022436	-0.00040445	-0.00022005	0.00878889	0.01099497;
+    0.00882228	0.03150784	0.00878835	-0.00022006	-0.00040474	-0.0002244	0.0109871;
+    -0.00022436	0.00878835	0.03159127	0.00878864	-0.00022438	-0.00036916	0.01108454;
+    -0.00040445	-0.00022006	0.00878864	0.03151602	0.00882233	-0.00022438	0.01099507;
+    -0.00022005	-0.00040474	-0.00022438	0.00882233	0.03150787	0.0087883	0.01098715;
+    0.00878889	-0.0002244	-0.00036916	-0.00022438	0.0087883	0.03159171	0.011085;
+    0.01099497	0.0109871	0.01108454	0.01099507	0.01098715	0.011085	0.05823799]
+    max_val1 = max(0, maximum(abs.(q2)))
+    plotd = heatmap(q2; color=palette(:RdGy_9, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
+                        clims=(-max_val1, max_val1), ticks = false,xaxis=false,yaxis=false, 
+                        xlims = (0.5,7.5), ylims = (0.5,7.5),yflip=true)
+    m, n = size(q2)
+    vline!(0.5:(n+0.5), c=:grey, label=false)
+    hline!(0.5:(m+0.5), c=:grey, label=false)
+
+
+    savefig(plotd,@sprintf("q_correlation_hbc.png"))
+    s2=[0.03086426	0.00917567	-0.00020937	-0.00016823	-0.00021138	0.00913799	0.0116173;
+    0.00917567	0.03081745	0.00913992	-0.000211	-0.00017273	-0.00021103	0.01157484;
+    -0.00020937	0.00913992	0.03099207	0.00913734	0.00914194	-0.00015027	0.01175149;
+    -0.00016823	-0.000211	0.00913734	0.03086289	0.00917414	-0.00020901	0.01161784;
+    -0.00021138	-0.00017273	0.00914194	0.00917414	0.03082064	0.00914194	0.01157813;
+    0.00913799	-0.00021103	-0.00015027	-0.00020901	0.00914194	0.03099828	0.01175363;
+    0.0116173	0.01157484	0.01175149	0.01161784	0.01157813	0.01175363	0.07135078]
+    max_val1 = max(0, maximum(abs.(s2)))
+    plotd = heatmap(s2; color=palette(:RdGy_9, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
+                        clims=(-max_val1, max_val1), ticks = false,xaxis=false,yaxis=false, 
+                        xlims = (0.5,7.5), ylims = (0.5,7.5),yflip=true)
+    m, n = size(s2)
+    vline!(0.5:(n+0.5), c=:grey, label=false)
+    hline!(0.5:(m+0.5), c=:grey, label=false)
+
+
+    savefig(plotd,@sprintf("s2_correlation_hbc.png"))
+    
 
 end
 
 run()
-
