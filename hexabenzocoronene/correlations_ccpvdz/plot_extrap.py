@@ -149,9 +149,9 @@ ax.yaxis.tick_right()
 ax.legend()
 fig = plt.gcf()
 fig.set_size_inches(4.5,4.5)
-fig.savefig(file+'_TPSCIextrap.pdf', dpi=300, bbox_inches='tight')
-fig.savefig(file+'_TPSCIextrap.png', dpi=300, bbox_inches='tight')
+fig.savefig(file+'_TPSCIextrap_ccpvdz.pdf', dpi=300, bbox_inches='tight')
+fig.savefig(file+'_TPSCIextrap_ccpvdz.png', dpi=300, bbox_inches='tight')
 
-#plt.show()
+plt.show()
 
 print(extrap)
