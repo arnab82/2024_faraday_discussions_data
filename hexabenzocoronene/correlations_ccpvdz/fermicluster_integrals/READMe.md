@@ -1,1 +1,1 @@
-The clusters were ordered originally in [1,2,4,7,5,3,6] this order in cmf jld2 and tpscistate. They are ordered now in [1,2,3,4,5,6,7] in this order to plot the correlation heatmap. 
+The clusters were ordered originally in [1,2,6,3,5,7,4] this order in cmf jld2 and tpscistate. They are ordered now in [1,2,3,4,5,6,7] in this order to plot the correlation heatmap. 

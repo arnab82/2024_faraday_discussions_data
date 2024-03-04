@@ -3,17 +3,17 @@ using FermiCG
 using Plots
 using LinearAlgebra
 using Printf
-#the clusters are in order of 1,2,4,7,5,3,6 , the matices are reordered to 1,2,3,4,5,6,7 to plot n2, sz2, q2
+#the clusters are in order of 1,2,6,3,5,7,4 , the matices are reordered to 1,2,3,4,5,6,7 to plot n2, sz2, q2
 
 function run()
-    @load("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/tucker_thresh_5_1e4.jld2")
-    @load("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/hexabenzocoronene_old.jld2")
+    @load("/tucker_thresh_5_1e4.jld2")
+    @load("../../hexabenzocoronene_old.jld2")
     cmf_state = TPSCIstate(clusters, FockConfig(init_fspace))
 
 
     display(v0b)
     cf = correlation_functions(v0b, cmf_state)
-    @save "/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/correlation.jld2" cf
+    @save "correlations_ccpvdzcorrelation.jld2" cf
     n1 = cf["N"][1]
     n2 = cf["N"][2]
     sz1 = cf["Sz"][1]
@@ -43,7 +43,7 @@ function run()
     hline!(0.5:(m+0.5), c=:grey, label=false)
     display(plotd)
 
-    savefig(plotd,@sprintf("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/n_correlation_hbc.png"))
+    savefig(plotd,@sprintf("n_correlation_hbc.png"))
     
     sz2=[0.00925446	-0.0027587	-0.00004766	-0.00013415	-0.00004725	-0.00276328	-0.00350342;
     -0.0027587	0.00925935	-0.00276279	-0.00004727	-0.00013475	-0.00004721	-0.00350864;
@@ -61,7 +61,7 @@ function run()
     hline!(0.5:(m+0.5), c=:grey, label=false)
 
 
-    savefig(plotd,@sprintf("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/sz_correlation_hbc.png"))
+    savefig(plotd,@sprintf("sz_correlation_hbc.png"))
     
     q2=[0.03307346	0.01079417	0.0001041	-0.00005672	0.00011049	0.01080873	0.01342415;
     0.01079417	0.03307551	0.01080557	0.00011064	-0.00005735	0.00010328	0.01342571;
@@ -79,15 +79,15 @@ function run()
     hline!(0.5:(m+0.5), c=:grey, label=false)
 
 
-    savefig(plotd,@sprintf("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/q_correlation_hbc.png"))
+    savefig(plotd,@sprintf("q_correlation_hbc.png"))
     
-    s2=[0.03086426	0.00917567	-0.00020937	-0.00016823	-0.00021138	0.00913799	0.0116173;
-    0.00917567	0.03081745	0.00913992	-0.000211	-0.00017273	-0.00021103	0.01157484;
-    -0.00020937	0.00913992	0.03099207	0.00913734	-0.00021131	-0.00015027	0.01175149;
-    -0.00016823	-0.000211	0.00913734	0.03086289	0.00917414	-0.00020901	0.01161784;
-    -0.00021138	-0.00017273	-0.00021131	0.00917414	0.03082064	0.00914194	0.01157813;
-    0.00913799	-0.00021103	-0.00015027	-0.00020901	0.00914194	0.03099828	0.01175363;
-    0.0116173	0.01157484	0.01175149	0.01161784	0.01157813	0.01175363	0.07135078]
+    s2=[0.03393927	0.01005385	-0.00014237	-0.00009454	-0.00013552	0.01007677	0.01286263;
+    0.01005385	0.03394938	0.01007536	-0.00013532	-0.00009262	-0.00014198	0.01287511;
+    -0.00014237	0.01007536	0.03395539	0.01007542	-0.00014202	-0.00009892	0.0128601;
+    -0.00009454	-0.00013532	0.01007542	0.03394001	0.01005458	-0.00014262	0.012863;
+    -0.00013552	-0.00009262	-0.00014202	0.01005458	0.03395483	0.01007666	0.0128772;
+    0.01007677	-0.00014198	-0.00009892	-0.00014262	0.01007666	0.0339672	0.01287065;
+    0.01286263	0.01287511	0.0128601	0.012863	0.0128772	0.01287065	0.07845006]
     max_val1 = max(0, maximum(abs.(s2)))
     plotd = heatmap(s2; color=palette(:RdGy_9, 100), aspect_ratio=1, dpi=300, size=(300,300), right_margin = 10Plots.mm,  
                         clims=(-max_val1, max_val1), ticks = false,xaxis=false,yaxis=false, 
@@ -97,7 +97,7 @@ function run()
     hline!(0.5:(m+0.5), c=:grey, label=false)
 
 
-    savefig(plotd,@sprintf("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/s2_correlation_hbc.png"))
+    savefig(plotd,@sprintf("s2_correlation_hbc.png"))
     
 
 end
