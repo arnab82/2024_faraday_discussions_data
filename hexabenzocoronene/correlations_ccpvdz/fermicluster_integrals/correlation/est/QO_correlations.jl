@@ -6,8 +6,8 @@ using Printf
 
 
 function run()
-    @load("tucker_thresh_5_2e4.jld2")
-    @load("../../hexabenzocoronene_old.jld2")
+    @load("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/tucker_thresh_5_1e4.jld2")
+    @load("/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/hexabenzocoronene_old.jld2")
     init_fspace = [(3,3),(3,3),(3,3),(3,3),(3,3),(3,3),(3,3)]
     display(v0b)
     ecore = ints.h0
@@ -27,14 +27,14 @@ function run()
     FermiCG.eye!(ci_vector)
     # @load "cmfstate.jld2"
     eci, v = FermiCG.tps_ci_direct(ci_vector, cluster_ops, clustered_ham);
-    @save "tpsstate_initial.jld2" v
+    @save "/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/tpsstate_initial.jld2" v
     # @load "tpsstate_initial.jld2" 
     
     # eci, v0b_ = FermiCG.tps_ci_direct(v0b, cluster_ops, clustered_ham);
     display(v)
     C_f=correlation_functions(v0b, v)
     # C_f_=correlation_functions(v0b, ci_vector)
-    @save "correlation_QO.jld2" C_f
+    @save "/Users/arnab/arnab/workspace/2024_faraday_discussions_data/hexabenzocoronene/correlations_ccpvdz/fermicluster_integrals/correlation/est/correlation_QO.jld2" C_f
 end
 
 run()
