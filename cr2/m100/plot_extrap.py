@@ -41,14 +41,6 @@ for i in range(len(data)):
         energy_pt2[i] = np.array([float(a)*conversion for a in data[i][n_extrap_points+1:2*n_extrap_points+1]])
 
 
-emin = 0
-for i in energy_pt2:
-    emin = min(emin, np.min(energy_pt2[i]))
-for i in energy_pt2:
-    energy_pt2[i] -= emin
-    energy_var[i] -= emin
-
-print(" Energy shift: %12.8f" %emin)
 
 blue = '#3E6D9C'
 orange = '#FD841F'
@@ -71,12 +63,22 @@ extrap = []
 xmax = 0 
 xmin = -10
 
-ymax = 10 
+ymax = 15 
 ymin = 0.0
-#for s in energy_var:
-#    ymax = max(np.max(energy_var[s]), ymax)
-#    ymin = min(np.min(energy_pt2[s]), ymin)
 
+# Find shift for plots to have the extrapolation at the origin
+shift = 0.0
+for key in energy_var:
+    x = energy_pt2[key] - energy_var[key]
+    y = energy_var[key]
+    m, b, r_value, p_value, std_err = scipy.stats.linregress(x, y)
+
+    shift = min(b, shift)
+
+for i in energy_pt2:
+    energy_pt2[i] -= shift
+    energy_var[i] -= shift 
+print(" Energy shift: %12.8f" %shift)
 
 
 for key in energy_var:
@@ -92,9 +94,6 @@ for key in energy_var:
 
     plt.rcParams.update({'font.size': 10})
 
-    ymin = min(ymin, b)
-    ymax = max(ymax, m*xmin+b)
-
     ax.plot(x, y, marker='o',linestyle='-' ,markersize=8, color = cb[key])
     #ax.plot(x, z, marker='x',linestyle=' ' , markersize=8, color = cb[key])
 
@@ -103,7 +102,7 @@ for key in energy_var:
     ax.plot(x2, line, alpha=1.0, color = cb[key], linestyle='-', linewidth=1.5)
     line = m2*x2+b                                     
     #ax.plot(x2, line, alpha=0.5, color = cb[key], linestyle='--', linewidth=1.5)
-    print("Extrapolated Result: %14.8f"% ((b+emin)/conversion))
+    print("Extrapolated Result: %14.8f"% ((b+shift)/conversion))
     print("R^2                : %14.8f"% r_value)
     print("Var root",key,y)
     print("PT  root",key,z)
@@ -111,9 +110,6 @@ for key in energy_var:
     #print("color",cb[key])
 
 
-ymin = ymin - 1
-print("x: ", (xmin, xmax))
-print("y: ", (ymin, ymax))
 ax.set_ylim(ymin, ymax)
 ax.set_xlim(xmin, xmax)
 
@@ -134,6 +130,9 @@ ax.set_title('Absolute Energy, $E(S)$ (mH) ')
 #ax.legend(handles=[black_patch, blue_patch, green_patch, red_patch], loc='center right')
 #ax.legend(handles=[black_patch, blue_patch, green_patch, red_patch], loc='upper center')
 #ax.legend()
+
+ax.yaxis.set_label_position("right")
+ax.yaxis.tick_right()
 
 fig = plt.gcf()
 fig.set_size_inches(4.5,4.5)

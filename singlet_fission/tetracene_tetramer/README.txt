@@ -23,5 +23,6 @@ Hbare = VEV'
 # JLD2 Files
 H_guess_spin.jld2: e_guess, v_guess, e2_guess, ecore, Hbare
 thresh_spin_0.0004.jld2: clusters, e0, v0, e2, s2, ecore, init_fspace
+correlations.jld2: correlation dictonary with S2
 
 
